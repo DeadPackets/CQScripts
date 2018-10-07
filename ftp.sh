@@ -2,7 +2,7 @@
 
 # Filename
 CONFIG_FILE="/etc/vsfptd.conf"
-C_FLAG="-c"
+C_FLAG=""
 
 # Edit existing conf options
 echo "Replacing values..."
@@ -33,5 +33,4 @@ echo "Restarting vsftpd..."
 service vstpd restart
 
 # Open file for output
-echo "Opening file..."	
-cat $CONFIG_FILE | more
+#echo "Opening file..."	
