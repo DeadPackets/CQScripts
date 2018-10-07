@@ -2,7 +2,7 @@
 
 # Filename
 CONFIG_FILE="/etc/vsftpd.conf"
-SSL_DIR="/etc/certs/"
+SSL_DIR="/etc/certs"
 C_FLAG=""
 
 # Edit existing conf options
