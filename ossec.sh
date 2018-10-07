@@ -2,13 +2,13 @@
 
 # Download OSSEC
 echo "Downloading OSSEC..."
+apt-get install build-essential -y
 mkdir ossec && cd ossec
 wget https://github.com/ossec/ossec-hids/archive/3.0.0.tar.gz
 tar xzf 3.0.0.tar.gz
 
 echo "Installing..."
-sudo ./ossec-hids-3.0.0
-sudo ./install.sh
+sudo ./ossec-hids-3.0.0/install.sh
 
 
 
