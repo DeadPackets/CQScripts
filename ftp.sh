@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Filename
-CONFIG_FILE="/etc/vsfptd.conf"
+CONFIG_FILE="/etc/vsftpd.conf"
 C_FLAG=""
 
 # Edit existing conf options
@@ -30,7 +30,7 @@ echo "ssl_ciphers=HIGH" >> $CONFIG_FILE
 
 # Restart ftp
 echo "Restarting vsftpd..."
-service vstpd restart
+service vsftpd restart
 
 # Open file for output
 #echo "Opening file..."	
