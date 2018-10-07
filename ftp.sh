@@ -36,6 +36,3 @@ service vsftpd restart
 
 echo "Testing if vsftpd still works..."
 service vsftpd status
-
-# Open file for output
-#echo "Opening file..."	
