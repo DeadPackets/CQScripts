@@ -18,8 +18,8 @@ openssl req -x509 -nodes -days 365 -newkey rsa:1024 -subj "/C=AE/ST=Dubai/L=Duba
 # Edit conf
 echo "Appending conf file..."
 echo "write_enable=YES" >> $CONFIG_FILE
-echo "rsa_cert_file=/etc/ssl/vsftpd.pem" >> $CONFIG_FILE
-echo "rsa_private_key_file=/etc/ssl/vsftpd.pem" >> $CONFIG_FILE
+echo "rsa_cert_file=$SSL_DIR/vsftpd.pem" >> $CONFIG_FILE
+echo "rsa_private_key_file=$SSL_DIR/vsftpd.pem" >> $CONFIG_FILE
 echo "ssl_enable=YES" >> $CONFIG_FILE
 echo "allow_anon_ssl=NO" >> $CONFIG_FILE
 echo "force_local_data_ssl=YES" >> $CONFIG_FILE
