@@ -2,6 +2,7 @@
 
 # Filename
 CONFIG_FILE="/etc/vsftpd.conf"
+SSL_DIR="/etc/certs/"
 C_FLAG=""
 
 # Edit existing conf options
@@ -12,7 +13,7 @@ sed $C_FLAG -i "s/\(local_umask *= *\).*/\1022/" $CONFIG_FILE
 # Create SSL cert
 echo "Creating certificates..."
 mkdir -p /etc/ssl/certs
-openssl req -x509 -nodes -days 365 -newkey rsa:1024 -subj "/C=AE/ST=Dubai/L=Dubai/O=BlueTeam/OU=BlueTeam/CN=blueteam.com/emailAddress=noreply@blueteam.com" -keyout /etc/ssl/certs/vsftpd.pem -out /etc/ssl/certs/vsftpd.pem
+openssl req -x509 -nodes -days 365 -newkey rsa:1024 -subj "/C=AE/ST=Dubai/L=Dubai/O=BlueTeam/OU=BlueTeam/CN=blueteam.com/emailAddress=noreply@blueteam.com" -keyout $SSL_DIR/vsftpd.pem -out $SSL_DIR/vsftpd.pem
 
 # Edit conf
 echo "Appending conf file..."
