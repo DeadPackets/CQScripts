@@ -57,11 +57,11 @@ rm -rf /usr/share/modsecurity-crs
 git clone https://github.com/SpiderLabs/owasp-modsecurity-crs.git /usr/share/modsecurity-crs
 cd /usr/share/modsecurity-crs
 mv crs-setup.conf.example crs-setup.conf
-mv ./security2 /etc/apache2/mods-enabled/security2.conf
+mv ~/CQScripts/security2 /etc/apache2/mods-enabled/security2.conf
 sudo service apache2 restart
-sudo service httpd restart
 
 # SSH
+echo "Fixing SSH..."
 
 # Set /etc/ssh/sshd_config ownership and access permissions
 chown root:root /etc/ssh/sshd_config
