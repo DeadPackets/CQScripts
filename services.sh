@@ -140,8 +140,8 @@ echo "Testing if vsftpd still works..."
 service vsftpd status
 
 # Password hardening
-sudo mv /etc/pam.d/common-auth /etc/pam.d/common-auth.old
+mv /etc/pam.d/common-auth /etc/pam.d/common-auth.old
 cd ~/CQScripts
-sudo mv ./common-auth /etc/pam.d/common-auth
-sudo mv /etc/pam.d/common-password /etc/pam.d/common-password.old
-sudo mv ./common-password /etc/pam.d/common-password
+mv ./common-auth /etc/pam.d/common-auth
+mv /etc/pam.d/common-password /etc/pam.d/common-password.old
+mv ./common-password /etc/pam.d/common-password
