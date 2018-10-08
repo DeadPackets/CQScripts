@@ -11,7 +11,7 @@ echo "Installing..."
 sudo ./ossec-hids-3.0.0/install.sh
 
 echo "Installed! Now to configure..."
-cd ..
+cd ~/CQScripts
 sudo mv ./ossec.conf /var/ossec/etc/ossec.conf
 
 echo "Done! Now starting ossec..."
