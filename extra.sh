@@ -4,7 +4,7 @@ sudo apt install lynis rkhunter -y
 
 echo "Updating rkhunter..."
 sudo rkhunter --update
-sudo rkhunter --produpd
+sudo rkhunter --propupd
 
 echo "Running rkhunter..."
 sudo rkhunter -c --enable all --disable none
