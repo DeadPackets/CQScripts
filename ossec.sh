@@ -2,7 +2,7 @@
 
 # Download OSSEC
 echo "Downloading OSSEC..."
-apt-get install build-essential -y
+apt-get update && apt-get install build-essential -y
 mkdir ossec && cd ossec
 wget https://github.com/ossec/ossec-hids/archive/3.0.0.tar.gz
 tar xzf 3.0.0.tar.gz
@@ -15,14 +15,14 @@ cd ~/CQScripts
 sed -i '/<frequency>/a \
  <auto_ignore>no<\/auto_ignore>' inputfile
 
-echo "Done! Now starting ossec..."
-sudo /var/ossec/bin/ossec-control start
+# echo "Done! Now starting ossec..."
+# sudo /var/ossec/bin/ossec-control start
 
-echo "Installing the OSSEC web ui..."
-wget https://github.com/ossec/ossec-wui/archive/master.zip
-unzip master.zip
-sudo mv ossec-wui-master /var/www/html/ossec
-cd /var/www/html/ossec && sudo ./setup.sh
+# echo "Installing the OSSEC web ui..."
+# wget https://github.com/ossec/ossec-wui/archive/master.zip
+# unzip master.zip
+# sudo mv ossec-wui-master /var/www/html/ossec
+# cd /var/www/html/ossec && sudo ./setup.sh
 
-echo "Done! Restarting apache..."
-sudo service apache2 restart
+# echo "Done! Restarting apache..."
+# sudo service apache2 restart
