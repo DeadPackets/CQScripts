@@ -13,8 +13,8 @@ sudo ./ossec-hids-3.0.0/install.sh
 echo "Installed! Now to configure..."
 cd ~/CQScripts
 sed -i '/<frequency>/a \
- <auto_ignore>no<\/auto_ignore>' /var/ossec/etc/ossec.conf
-sed 's/\bcheck_all="yes"\b/& realtime="yes"/' /var/ossec/etc/ossec.conf
+ 	<auto_ignore>no<\/auto_ignore>' /var/ossec/etc/ossec.conf
+sed -i 's/\bcheck_all="yes"\b/& realtime="yes"/' /var/ossec/etc/ossec.conf
 
 # echo "Done! Now starting ossec..."
 # sudo /var/ossec/bin/ossec-control start
