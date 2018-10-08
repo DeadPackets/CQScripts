@@ -94,3 +94,4 @@ sed -i "/PermitEmptyPasswords.*no/s/^#//g" /etc/ssh/sshd_config
 # Deny Users to set environment options through the SSH daemon
 sed -i "/PermitUserEnvironment.*no/s/^#//g" /etc/ssh/sshd_config
 
+service ssh restart

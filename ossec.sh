@@ -10,8 +10,6 @@ tar xzf 3.0.0.tar.gz
 echo "Installing..."
 sudo ./ossec-hids-3.0.0/install.sh
 
-
-
 echo "Installed! Now to configure..."
 cd ..
 sudo mv ./ossec.conf /var/ossec/etc/ossec.conf
@@ -23,6 +21,7 @@ echo "Installing the OSSEC web ui..."
 wget https://github.com/ossec/ossec-wui/archive/master.zip
 unzip master.zip
 sudo mv ossec-wui-master /var/www/html/ossec
-sudo cd /var/www/html/ossec && sudo ./setup.sh
+cd /var/www/html/ossec && sudo ./setup.sh
+
 echo "Done! Restarting apache..."
 sudo service apache2 restart
