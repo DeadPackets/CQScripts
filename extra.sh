@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt install lynis tiger rkhunter fail2ban -y
+sudo apt install lynis rkhunter -y
 
 echo "Updating rkhunter..."
 sudo rkhunter --update
