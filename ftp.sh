@@ -29,6 +29,8 @@ echo "ssl_sslv2=NO" >> $CONFIG_FILE
 echo "ssl_sslv3=NO" >> $CONFIG_FILE
 echo "require_ssl_reuse=NO" >> $CONFIG_FILE
 echo "ssl_ciphers=HIGH" >> $CONFIG_FILE
+echo "anon_upload_enable=NO" >> $CONFIG_FILE
+echo "anon_mkdir_write_enable=NO" >> $CONFIG_FILE
 
 # Restart ftp
 echo "Restarting vsftpd..."
