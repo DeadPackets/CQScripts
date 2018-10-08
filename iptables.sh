@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Interface
+INTERFACE="eth0"
+
 # Flush all rules
 echo "Flushing IPTables..."
 sudo iptables -F
@@ -29,8 +32,8 @@ do
 done
 
 # SSH bruteforce disable
-iptables -A INPUT -p TCP --dport 22 -i AAAA -m state --state NEW -m recent --set
-iptables -A INPUT -p TCP --dport 22 -i AAAA -m state --state NEW -m recent --update --second 300 --hitcount 3 -j DROP
+iptables -A INPUT -p TCP --dport 22 -i $INTERFACE -m state --state NEW -m recent --set
+iptables -A INPUT -p TCP --dport 22 -i $INTERFACE -m state --state NEW -m recent --update --second 300 --hitcount 3 -j DROP
 
 # Allow established connections
 iptables -I INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
