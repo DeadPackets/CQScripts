@@ -12,23 +12,13 @@ sudo iptables -Z
 # Allow internal traffic
 iptables -A INPUT -i lo -j ACCEPT
 
-# Ports of services that need to be open WITHOUT ssh
-ports=(80, 443, 21)
-
+# Ports of services that need to be open
+ports=(80 21 22)
 for port in "${ports[@]}"
 do
 	:
 	echo "iptables -A INPUT -p tcp --dport $port -j ACCEPT"
 	iptables -A INPUT -p tcp --dport $port -j ACCEPT
-done
-
-ssh_whitelist=("1.1.1.1" "8.8.8.8")
-
-for $ip in "${ssh_whitelist[@]}"
-do
-	:
-	echo "iptables -A INPUT -p tcp -s $ip --dport 22 -j ACCEPT"
-	iptables -A INPUT -p tcp -s $ip --dport 22 -j ACCEPT
 done
 
 # SSH bruteforce disable
